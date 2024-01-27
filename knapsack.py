@@ -24,3 +24,8 @@ class Knapsack():
     
     def empty(self) -> None:
         self.items: List[Box] = []
+    
+    def add_selected_boxes(self, available_boxes: List[Box], selected_boxes: List[int]) -> None:
+        for box, isSelected in zip(available_boxes, selected_boxes):
+            if isSelected:
+                self.add_box(box)
